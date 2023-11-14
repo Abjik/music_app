@@ -4,30 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+
     <title>Document</title>
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 class="panel-title">Login</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form method="POST" action="">
-                                    {{ csrf_field() }}
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
-                                    </div>
-                                    <div class="form-group">
+        <h1>Регистрация</h1>
+
+        <form action="{{ route('register') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="name" class="form-label">Имя</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="password">Пароль</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="password_confirmation">Подтверждение пароля</label>
+                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        </form>
     </div>
 </body>
 </html>
