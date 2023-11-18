@@ -26,22 +26,18 @@ Route::get('/main', function () {
     return view('main');
 })->name('main');
 
+// login page
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::post('/login', [ClientController::class, 'login'])->name('loginin');
+Route::post('/login', [ClientController::class, 'login'])->name('login');
 
+// registration page
 Route::get('/register', function () {
     return view('register');
 })->name('register');
 
 Route::post('register', [ClientController::class, 'store'])->name('register');
 
-Route::get('client/add', function () {
-    DB::table('client')->insert([
-        'name' => 'Test',
-        'email' => 'test@mail.ru',
-        'password' => '123'
-    ]);
-});
+

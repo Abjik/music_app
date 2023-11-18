@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
-    public function index(){
-        $client = Client::all();
-        return view('client.index')->with(['clients' => $client]);
-    }
 
     public function store(Request $request){
         Client::create([
@@ -24,15 +20,15 @@ class ClientController extends Controller
     }
 
     public function login(Request $request){
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required'
-    ]);
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
 
-    $credentials = $request->only('email', 'password');
-    if (Auth::attempt($credentials)) {
-        return redirect()->intended(route('main'));
-    }
-    return redirect(route('login'))->with("error", "Неверный логин или пароль");
+        $credentials = $request->only('email', 'password');
+        if (Client::where('email', $credentials['email'])->exists() && Client::where('password', $credentials['password'])->exists()) {
+            return redirect()->intended(route('main'));
+        }
+        return redirect(route('login'))->with("error", "Неверный логин или пароль");
     }
 }

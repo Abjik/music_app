@@ -18,7 +18,7 @@
     <div class="container">
         <h1>Вход</h1>
 
-        <form action="{{ route('login') }}" method="post">
+        <form action="{{ route('login') }}" method="POST">
             @csrf
 
             <div class="form-group">
