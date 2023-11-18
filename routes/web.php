@@ -30,7 +30,7 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-// Route::get('/login', [ClientController::class, 'getUser'])->name('login');
+Route::post('/login', [ClientController::class, 'login'])->name('loginin');
 
 Route::get('/register', function () {
     return view('register');
