@@ -11,12 +11,13 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
-    
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+
     <title>Login</title>
 </head>
 <body>
     <div class="container">
-        <h1>Вход</h1>
+        <h1>Login</h1>
 
         <form action="{{ route('login') }}" method="POST">
             @csrf
@@ -27,13 +28,13 @@
             </div>
 
             <div class="form-group">
-                <label for="password">Пароль</label>
+                <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Войти</button>
+            <button type="submit" class="button-27">Log In</button>
 
-            <a href="{{ route('register') }}" class="float-right">Зарегистрироваться</a>
+            <a href="{{ route('register') }}" class="button-27" style="float: right;">Register</a>
         </form>
     </div>
 </body>
