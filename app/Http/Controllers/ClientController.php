@@ -26,7 +26,9 @@ class ClientController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
-        if (Client::where('email', $credentials['email'])->exists() && Client::where('password', $credentials['password'])->exists()) {
+        $client = Client::where('email', $credentials['email'])->where('password', $credentials['password'])->first();
+    
+        if ($client) {
             return redirect()->intended(route('main'));
         }
         return redirect(route('login'))->with("error", "Неверный логин или пароль");
