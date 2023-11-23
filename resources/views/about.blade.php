@@ -16,42 +16,37 @@
 
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Главная</a></li>
-                <li><a href="/about">О нас</a></li>
-                <li><a href="/contact">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Добро пожаловать в наше приложение для музыки</h1>
-                <p>Мы предлагаем лучший опыт прослушивания музыки онлайн</p>
+                <h1>Welcome to our music app!</h1>
+                <p style="font-size: large">Our app offers you a unique music listening experience. 
+                    You can get personalized recommendations, listen to music without ads 
+                    and even download tracks for offline listening.</p>
+                <a href="{{ route('login') }}" class="button-27">Sign in</a>
             </div>
         </section>
         <section class="features">
             <div class="feature">
                 <img src="{{ asset('images/feature1.png') }}" alt="Функция 1">
-                <h2>Персонализированные рекомендации</h2>
-                <p>Получайте рекомендации на основе ваших предпочтений и прослушиваемых треков</p>
+                <h2>Personalized recommendations</h2>
+                <p>Get recommendations based on your preferences and the tracks you listen to</p>
             </div>
             <div class="feature">
                 <img src="{{ asset('images/feature2.png') }}" alt="Функция 2">
-                <h2>Подписка без рекламы</h2>
-                <p>Наслаждайтесь музыкой без раздражающих рекламных вставок</p>
+                <h2>Subscription without advertising</h2>
+                <p>Enjoy your music without annoying ad inserts</p>
             </div>
             <div class="feature">
                 <img src="{{ asset('images/feature3.png') }}" alt="Функция 3">
-                <h2>Офлайн прослушивание</h2>
-                <p>Скачивайте музыку и слушайте ее без доступа к интернету</p>
+                <h2>Offline listening</h2>
+                <p>Download music and listen to it without internet access</p>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2022 Наше приложение для музыки. Все права защищены.</p>
+        <p>&copy; 2023 Our music app. All rights reserved.</p>
     </footer>
+    <script src="{{ asset('js/ForAboutImg.js') }}"></script>
 </body>
 </html>
